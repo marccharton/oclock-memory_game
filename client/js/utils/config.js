@@ -13,4 +13,4 @@ const httpRoutes = {
     }
 };
 
-export { requestTimeOut, httpRequest, httpRoutes };
+export { httpRequest, httpRoutes };
