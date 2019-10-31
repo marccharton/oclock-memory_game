@@ -11,5 +11,7 @@
   "dependencies": {
     "jquery": "^3.4.1"
   },
-  "devDependencies": {}
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
 }
