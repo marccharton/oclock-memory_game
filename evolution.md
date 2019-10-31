@@ -26,3 +26,4 @@
 - ok bon restons sur le coté efficace et faisons le front maintenant histoire que ça marche.
 - allez (fait craquer ses doigts)
 - bon allez je vais commencer par faire de la doc (comment ça de la fuite ? je vois pas de quoi vous parlez -_-)
+- haa les stacks frooonnnt :cry:
