@@ -4,7 +4,7 @@
 
 ## contexte
 
-- test technique pour [o'clock](https://oclock.io/blog/275/on-a-besoin-de-renforts).
+- test technique pour [o'clock](https://oclock.io/blog/275/on-a-besoin-de-renforts) :clock1:.
 - sujet : [Test technique - Full stack.pdf](../Test&#32;technique&#32;-&#32;Full&#32;stack.pdf)
 
 ## prérequis
