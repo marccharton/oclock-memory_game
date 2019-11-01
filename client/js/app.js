@@ -6,17 +6,14 @@ import { scoreApi } from "./api/score"
 
 $(document).ready(function () {
 
-    // var readButton = $('<button> Voir Scores </button>');
-    // readButton.click(() => readScore());
-    // $("body").append(readButton);
+    var readButton = $('<button> Voir Scores </button>');
+    readButton.click(() => readScore());
+    $("body").append(readButton);
 
-    // var createButton = $('<button> Créer Score </button>');
-    // createButton.click(() => createScore());
-    // $("body").append(createButton);
+    var createButton = $('<button> Créer Score </button>');
+    createButton.click(() => createScore());
+    $("body").append(createButton);
 
-    // var getCardButton = $('<button> Get Card </button>');
-    // getCardButton.click(() => getCard("fruit_" + Math.floor(Math.random() * 3 + 1)));
-    // $("#app").append(getCardButton);
 });
 
 function readScore() {
