@@ -27,3 +27,13 @@
 - allez (fait craquer ses doigts)
 - bon allez je vais commencer par faire de la doc (comment ça de la fuite ? je vois pas de quoi vous parlez -_-)
 - haa les stacks frooonnnt :cry:
+
+
+## après l'api front
+- bon c'est bien gentil tout ça mais j'ai aucunement un jeu
+- alors soit j'ai un front qui communique avec l'api serveur mais bon... et après ?
+- alors on part sur du fonctionnel !
+- comme c'est chou les sprites sont de 100x100 <3
+- j'ai vraiment peur du front c'est ouf : je fais n'importe quoi alors que je sais très bien ce que je dois faire ^^
+- pwa lalaaaaa les stacks front c'est vraiment ... voilà.
+-
