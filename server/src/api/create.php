@@ -15,6 +15,7 @@ header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type
  */
 include_once "../App.php";
 include_once "../Repository/ScoreRepository.php";
+include_once "../Util/Validator.php";
 
 /**
  * objet permettant l'accès à la base de donnée
@@ -33,6 +34,13 @@ $scoreRepository = new ScoreRepository($db);
  * @var object
  */
 $data = json_decode(file_get_contents("php://input"));
+
+/**
+ * Validation des données d'entrée.
+ */
+if (!Validator::isDataValid($data)) {
+	die ;
+}
 
 /**
  * Nouvel entité Score qui nous servira de transport des données jusqu'à la base

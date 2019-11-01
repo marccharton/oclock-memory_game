@@ -1,6 +1,6 @@
-#ma tete
-ce qu'il se passe dans ma tête
+# ma tete
 
+## ce qu'il s'y passe...
 
 - ouh mon dieu, un test technique !! quelle horreur, j'y arriverai jamais.
 - ok bon ça va le test n'a pas l'air bien compliqué en fait que je suis rassuré, je vais y arriver
@@ -16,4 +16,14 @@ ce qu'il se passe dans ma tête
 - bon allez c'est parti je vais écrire ce qui se passe dans ma tête parceque je pense que c'est un process ultra commun qui peut apporter quelquechose
 - wait... whaaat ? tu devais pas coder à la base ?
 - ok... bon allez.
--
+
+## après le serveur
+- bon ben voilà c'était pas si compliqué (en même temps ma spécialité de base c'est plus le back), et puis je sais le faire je vois pas où est le problème.
+- bon.. c'est vrai que c'est loin d'être parfait.
+- ... mais est ce le but ?
+- je pourrais l'améliorer encore. oui c'est vrai. d'environ 5644314 manières.
+- mais bon "est ce le but ?!?!"
+- ok bon restons sur le coté efficace et faisons le front maintenant histoire que ça marche.
+- allez (fait craquer ses doigts)
+- bon allez je vais commencer par faire de la doc (comment ça de la fuite ? je vois pas de quoi vous parlez -_-)
+- haa les stacks frooonnnt :cry:
