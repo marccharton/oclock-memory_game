@@ -10,6 +10,8 @@ header("Access-Control-Allow-Methods: POST");
 header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With");
 
 
+ini_set('html_errors', false);
+
 /**
  * Inclusion de l'application et du repository
  */
