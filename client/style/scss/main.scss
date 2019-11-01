@@ -1,0 +1,53 @@
+@import "bootstrap/scss/bootstrap";
+@import "theme/variables";
+@import "theme/bootswatch";
+
+$card-img: url("../../assets/cards.png");
+
+body {
+  background-color: $gray-300;
+}
+
+
+#app {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#board {
+  width: 600px;
+  height: 600px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  perspective: 800px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+
+  margin: 10px;
+  box-shadow: 1px 1px 1px 1px lighten($color: $dark, $amount: 50);
+
+  transition: transform 1s;
+  transform: rotateY(360deg);
+}
+
+#fruit_01 {
+  background: $card-img 0px 0px;
+}
+
+#fruit_01 {  background: linear-gradient($orange, $red); }
+#fruit_02 {  background: $card-img 0px -100px; }
+#fruit_03 {  background: $card-img 0px -200px; }
+
+#progress-bar {
+  width: 70%;
+  margin: 0 auto;
+}

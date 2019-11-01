@@ -1,4 +1,5 @@
 import { httpRequest } from "./config.js"
+import * as $ from "jquery";
 
 /**
  * Couche de connection à l'api du serveur

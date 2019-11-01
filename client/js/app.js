@@ -1,19 +1,22 @@
-import * as $ from "../node_modules/jquery/dist/jquery.js";
-// import { apiConnector } from "./utils/ApiConnector.js"
-import { scoreApi } from "./api/score.js"
+import '../style/scss/main.scss';
 
-window.$ = $;
+import * as $ from "jquery";
+import { scoreApi } from "./api/score"
+// import { getCard } from "./card"
 
 $(document).ready(function () {
 
-    var readButton = $('<button> Voir Scores </button>');
-    readButton.click(() => readScore());
-    $("#app").append(readButton);
+    // var readButton = $('<button> Voir Scores </button>');
+    // readButton.click(() => readScore());
+    // $("body").append(readButton);
 
-    var createButton = $('<button> Créer Score </button>');
-    createButton.click(() => createScore());
-    $("#app").append(createButton);
+    // var createButton = $('<button> Créer Score </button>');
+    // createButton.click(() => createScore());
+    // $("body").append(createButton);
 
+    // var getCardButton = $('<button> Get Card </button>');
+    // getCardButton.click(() => getCard("fruit_" + Math.floor(Math.random() * 3 + 1)));
+    // $("#app").append(getCardButton);
 });
 
 function readScore() {
@@ -21,5 +24,10 @@ function readScore() {
 }
 
 function createScore() {
+    // var currentDate = new Date();
+    // scoreApi.create(currentDate, currentDate, Math.floor(Math.random() * 100000), "1")
     scoreApi.create("2019-10-17", "2019-10-14", Math.floor(Math.random() * 100000), "1")
 }
+
+
+
