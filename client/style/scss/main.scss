@@ -1,13 +1,11 @@
 @import "bootstrap/scss/bootstrap";
 @import "theme/variables";
 @import "theme/bootswatch";
-
-$card-img: url("../../assets/cards.png");
+@import "board";
 
 body {
   background-color: $gray-300;
 }
-
 
 #app {
   height: 90vh;
@@ -15,48 +13,6 @@ body {
   flex-direction: column;
   justify-content: space-evenly;
 }
-
-#board {
-  width: 600px;
-  height: 600px;
-
-  margin: 0 auto;
-
-  display: flex;
-  flex-wrap: wrap;
-
-  perspective: 800px;
-}
-
-.card {
-  width: 100px;
-  height: 100px;
-
-  margin: 10px;
-  box-shadow: 1px 1px 1px 1px lighten($color: $dark, $amount: 50);
-
-  transition: transform 1s;
-  transform: rotateY(360deg);
-}
-
-#fruit_01 {
-  background: $card-img 0px 0px;
-}
-
-#fruit_01 {  background: linear-gradient($orange, $red); }
-#fruit_02 {  background: $card-img 0px -100px * 1; }
-#fruit_03 {  background: $card-img 0px -100px * 2; }
-#fruit_04 {  background: $card-img 0px -100px * 3; }
-#fruit_05 {  background: $card-img 0px -100px * 4; }
-#fruit_06 {  background: $card-img 0px -100px * 5; }
-#fruit_07 {  background: $card-img 0px -100px * 6; }
-#fruit_08 {  background: $card-img 0px -100px * 7; }
-#fruit_09 {  background: $card-img 0px -100px * 8; }
-#fruit_10 {  background: $card-img 0px -100px * 9; }
-#fruit_11 {  background: $card-img 0px -100px * 10; }
-#fruit_12 {  background: $card-img 0px -100px * 11; }
-#fruit_13 {  background: $card-img 0px -100px * 12; }
-#fruit_14 {  background: $card-img 0px -100px * 13; }
 
 #progress-bar {
   width: 70%;
