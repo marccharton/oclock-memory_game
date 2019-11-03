@@ -1,5 +1,10 @@
-import { timer } from "./timer";
+import { timer } from "./Timer";
 import { scoreApi } from "./api/score"
+
+export {
+    run,
+    endGame
+};
 
 let cardList;
 let cardVisible = false;
@@ -13,11 +18,9 @@ let scoreMax = 100000;
 let nbFail = 0;
 let playerName;
 
-export {
-    run,
-    endGame
-};
-
+/**
+ * initialise les paramètres du jeu
+ */
 function init() {
     cardVisible = false;
     lockBoard = false;
@@ -27,9 +30,14 @@ function init() {
     nbFail = 0;
 }
 
+/**
+ * lance toute la logique du jeu
+ * @param {boolean} isFirst - détermine si c'est la première fois qu'on lance une partie ou non
+ */
 function run(isFirst = true) {
     if (isFirst) {
         playerName = prompt("Quel est ton nom ?", "Robert Paulson");
+        playerName = playerName ? playerName : "John Doe";
     }
     cardList = document.querySelectorAll('.card');
     totalCardNumber = cardList.length;
@@ -44,13 +52,9 @@ function run(isFirst = true) {
     });
 }
 
-function resetConfiguration() {
-    cardVisible = false;
-    lockBoard = false;
-    firstCard = null;
-    secondCard = null;
-}
-
+/**
+ * relance le jeu
+ */
 function restart() {
     alert("je suis sûr que tu peux faire mieux ;)");
     init();
@@ -59,6 +63,20 @@ function restart() {
     timer.run();
 }
 
+/**
+ * réinitialise les paramètres des cartes
+ */
+function resetCardConfiguration() {
+    cardVisible = false;
+    lockBoard = false;
+    firstCard = null;
+    secondCard = null;
+}
+
+/**
+ * met fin au jeu et relance une partie
+ * @param {boolean} isFinished - détermine si la partie a été terminée ou si le timer a mis fin à la partie
+ */
 function endGame(isFinished) {
     let score = computeScore();
 
@@ -74,15 +92,26 @@ function endGame(isFinished) {
     restart();
 }
 
+/**
+ * calcul le score final du joueur
+ */
 function computeScore() {
     return Math.round(scoreMax / timer.getTimeSpentSecond() + validatedCardNumber * 500 - nbFail * 500);
 }
 
+/**
+ * enregistre le score en base de donnée
+ * @param {int} score - score à enregistrer
+ */
 function saveScore(score) {
     let date = new Date().toISOString().slice(0, 19).replace('T', ' ');
     scoreApi.create(date, timer.getTimeSpent(), score, playerName);
 }
 
+/**
+ * montre la face visible des cartes et vérifie l'égalité entre les cartes.
+ * si elles ne sont pas égales, on les retourne.
+ */
 function revealCard() {
     if (lockBoard || this === firstCard) {
         return;
@@ -98,6 +127,10 @@ function revealCard() {
     firstCard.id === secondCard.id ? validateCards() : hideCard();
 }
 
+/**
+ * valide les cartes égales entre elles
+ * si toutes les cartes sont valides, on met fin à la partie
+ */
 function validateCards() {
     [firstCard, secondCard].forEach((card) => {
         card.removeEventListener('click', revealCard);
@@ -109,9 +142,12 @@ function validateCards() {
     if (validatedCardNumber == totalCardNumber) {
         setTimeout(() => endGame(true), 200);
     }
-    resetConfiguration();
+    resetCardConfiguration();
 }
 
+/**
+ * cache les cartes après un certain temps
+ */
 function hideCard() {
     nbFail++;
     lockBoard = true;
@@ -122,7 +158,7 @@ function hideCard() {
             card.classList.add('card-back');
         });
 
-        resetConfiguration();
+        resetCardConfiguration();
     }, timeOutToFlip);
 }
 

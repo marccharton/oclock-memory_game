@@ -1,6 +1,12 @@
 import { apiConnector } from "../utils/ApiConnector";
 import { httpRoutes } from "../utils/config";
 
+
+export {
+    scoreApi
+};
+
+
 /**
  * Couche api concernant les scores
  */
@@ -37,4 +43,3 @@ const scoreApi = {
     }
 };
 
-export { scoreApi };

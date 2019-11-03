@@ -3,18 +3,15 @@ import '../style/scss/main.scss';
 import * as $ from "jquery";
 import { scoreApi } from "./api/score"
 import * as game from "./game"
-import { timer } from "./timer"
+import { timer } from "./Timer"
 
 $(document).ready(function () {
-
-    // var showScoreButton = $('<button> Voir les Score </button>');
-    // showScoreButton.click(() => showScore());
-    // $("#app").append(showScoreButton);
-
     launchGame();
-
 });
 
+/**
+ * lance le jeu après la lecture des scores
+ */
 function launchGame() {
     scoreApi.read().done((scoreList) => {
         showScore(scoreList);
@@ -24,6 +21,10 @@ function launchGame() {
     });
 }
 
+/**
+ * affiche la liste des scores en BDD.
+ * @param {Object} scoreList - liste des scores en BDD
+ */
 function showScore(scoreList) {
     let message = "Voici la liste des scores : \n";
 

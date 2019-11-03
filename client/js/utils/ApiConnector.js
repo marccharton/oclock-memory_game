@@ -63,5 +63,4 @@ class ApiConnector {
         return $.ajax(settings);
     }
 
-}
-export let apiConnector = new ApiConnector();
+} export let apiConnector = new ApiConnector();
