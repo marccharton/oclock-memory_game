@@ -96,7 +96,7 @@ function endGame(isFinished) {
  * calcul le score final du joueur
  */
 function computeScore() {
-    return Math.round(scoreMax / timer.getTimeSpentSecond() + validatedCardNumber * 500 - nbFail * 500);
+    return Math.round(scoreMax - timer.getTimeSpentSecond() * 888 + validatedCardNumber * 2222 - nbFail * 555);
 }
 
 /**
