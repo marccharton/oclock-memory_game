@@ -35,6 +35,10 @@ class Timer {
     getTimeSpent() {
         return this.timeSpent;
     }
+
+    getTimeSpentSecond() {
+        return this.timeSpent / 1000;
+    }
 }
 
 export let timer = new Timer();

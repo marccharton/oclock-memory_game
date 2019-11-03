@@ -1,4 +1,5 @@
 import { timer } from "./timer";
+import { scoreApi } from "./api/score"
 
 let cardList;
 let cardVisible = false;
@@ -10,6 +11,7 @@ let totalCardNumber;
 let validatedCardNumber = 0;
 let scoreMax = 100000;
 let nbFail = 0;
+let playerName;
 
 export {
     run,
@@ -26,6 +28,9 @@ function init() {
 }
 
 function run(isFirst = true) {
+    if (isFirst) {
+        playerName = prompt("Quel est ton nom ?", "Robert Paulson");
+    }
     cardList = document.querySelectorAll('.card');
     totalCardNumber = cardList.length;
     cardList.forEach(card => {
@@ -56,24 +61,25 @@ function restart() {
 
 function endGame(isFinished) {
     let score = computeScore();
-    saveScore(score);
 
     if (isFinished) {
         timer.stopTimer(true);
-        alert("bravo ! :D ton score est de : " + score);
-        restart();
+        alert("bravo ! :D \nton score est de : " + score);
     }
     else {
         alert("ooowww, tu n'as pas fini à temps. ton score est de : " + score);
-        restart();
     }
+
+    saveScore(score);
+    restart();
 }
 
-function computeScore(timeSpent) {
-    return Math.round(scoreMax / timer.getTimeSpent() + (validatedCardNumber * 2000) / totalCardNumber - nbFail * 500);
+function computeScore() {
+    return Math.round(scoreMax / timer.getTimeSpentSecond() + validatedCardNumber * 500 - nbFail * 500);
 }
 
 function saveScore(score) {
+    scoreApi.create("2019-10-17", "2019-10-14", score, "1");
 }
 
 function revealCard() {
