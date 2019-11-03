@@ -7,7 +7,7 @@ class Timer {
      * Initialise les paramètres concernant le timer
      * @param {int} nbSecond - nombre de secondes
      */
-    init(nbSecond = 10) {
+    init(nbSecond = 120) {
         this.width = 0;
         this.intervalTime = 100;
         this.timeSpent = 0;
