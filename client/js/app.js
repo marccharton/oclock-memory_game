@@ -7,25 +7,32 @@ import { timer } from "./timer"
 
 $(document).ready(function () {
 
-    var readButton = $('<button> Voir Scores </button>');
-    readButton.click(() => readScore());
-    $("body").append(readButton);
+    // var showScoreButton = $('<button> Voir les Score </button>');
+    // showScoreButton.click(() => showScore());
+    // $("#app").append(showScoreButton);
 
-    var createButton = $('<button> Créer Score </button>');
-    createButton.click(() => createScore());
-    $("body").append(createButton);
+    launchGame();
 
-    game.run();
-    timer.init();
-    timer.run();
 });
 
-function readScore() {
-    scoreApi.read();
+function launchGame() {
+    scoreApi.read().done((scoreList) => {
+        showScore(scoreList);
+        game.run();
+        timer.init();
+        timer.run();
+    });
 }
 
-function createScore() {
-    // var currentDate = new Date();
-    // scoreApi.create(currentDate, currentDate, Math.floor(Math.random() * 100000), "1")
-    scoreApi.create("2019-10-17", "2019-10-14", Math.floor(Math.random() * 100000), "1")
+function showScore(scoreList) {
+    let message = "Voici la liste des scores : \n";
+
+    for (let scoreIndex in scoreList) {
+        message += scoreList[scoreIndex].player_name;
+        message += " [" + scoreList[scoreIndex].game_date + "] = ";
+        message += scoreList[scoreIndex].score;
+        message += `en (${scoreList[scoreIndex].game_duration / 1000}s)\n`;
+    }
+
+    alert(message);
 }

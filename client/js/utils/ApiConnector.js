@@ -40,7 +40,7 @@ class ApiConnector {
     get(route) {
         this.settings.method = "GET";
         this.settings.url = `${this.apiBaseUrl}/${route}`;
-        this.send(this.settings);
+        return this.send(this.settings);
     }
 
     /**
@@ -60,9 +60,7 @@ class ApiConnector {
     * @param {Object} settings - paramètres de configuration spécifiques pour la requête
     */
     send(settings) {
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
+        return $.ajax(settings);
     }
 
 }

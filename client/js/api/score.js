@@ -11,7 +11,7 @@ const scoreApi = {
      */
     read() {
         const readScoreListUrl = httpRoutes.score.read;
-        apiConnector.get(readScoreListUrl);
+        return apiConnector.get(readScoreListUrl);
     },
 
     /**

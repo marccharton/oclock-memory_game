@@ -79,7 +79,8 @@ function computeScore() {
 }
 
 function saveScore(score) {
-    scoreApi.create("2019-10-17", timer.getTimeSpent(), score, playerName);
+    let date = new Date().toISOString().slice(0, 19).replace('T', ' ');
+    scoreApi.create(date, timer.getTimeSpent(), score, playerName);
 }
 
 function revealCard() {
@@ -124,3 +125,4 @@ function hideCard() {
         resetConfiguration();
     }, timeOutToFlip);
 }
+
