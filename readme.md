@@ -1,14 +1,16 @@
-# memory game
+# Marmelade
+
+(allez je vais quand même faire les readme en français :wink:)
 
 ## contexte
 
 ce jeu a été développé dans le cadre d'un test technique pour la société [o'clock](https://oclock.io/blog/275/on-a-besoin-de-renforts) :clock1:. <br/>
-lien vers le sujet : [Test technique - Full stack.pdf](../Test&#32;technique&#32;-&#32;Full&#32;stack.pdf)
+lien vers le sujet : [Test technique - Full stack.pdf](Test&#32;technique&#32;-&#32;Full&#32;stack.pdf)
 
 ## contenu
 
- - [un client](https://github.com/marccharton/oclock-memory_game/tree/feature/frontend/client)
- - [un serveur](https://github.com/marccharton/oclock-memory_game/tree/feature/frontend/server)
+ - [un client](https://github.com/marccharton/oclock-memory_game/tree/master/client)
+ - [un serveur](https://github.com/marccharton/oclock-memory_game/tree/master/server)
 
 ## approche
 
@@ -27,9 +29,9 @@ De manière général, j'ai cherché un bon compromis entre pédagogie, adaptati
 
 #### client
  - coté front j'ai choisi d'utiliser des bonnes pratiques ES6
- - le but étant d'avoir un exemple de code moderne
- - adapté aux besoins actuels du marché
- - permettre également une meilleure compréhension de framework comme react avec de la génération de dom coté JS plutôt que de binder le DOM à des fonctions diverses.
+ - utilisation de jquery avec parcimonie pour montrer 2 approches
+ - utilisation de quelques outils
+ - une stack utilisant webpack pour l'exemple
 
 #### serveur
  - utilisation de php simple pour voir qu'un framework n'est pas obligatoire
