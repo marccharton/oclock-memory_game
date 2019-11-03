@@ -1,3 +1,10 @@
+
+export {
+    httpRequest,
+    httpRoutes
+};
+
+
 // paramètres globaux pour toutes les requêtes serveur
 const httpRequest = {
     serverAddress: "http://oclock",
@@ -13,4 +20,3 @@ const httpRoutes = {
     }
 };
 
-export { httpRequest, httpRoutes };

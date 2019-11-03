@@ -9,6 +9,8 @@ header("Access-Control-Allow-Methods: GET");
 // liste des headers acceptés
 header("Access-Control-Allow-Headers: Access-Control-Allow-Headers, Content-Type, Access-Control-Allow-Methods, Authorization, X-Requested-With");
 
+ini_set('html_errors', false);
+
 /**
  * Inclusion de l'application et du repository
  */

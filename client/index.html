@@ -1,13 +1,90 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Memory Game</title>
+    <title>Marmelade</title>
 </head>
+
 <body>
-    <div id="app"></div>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <a class="navbar-brand" href="#">Marmelade</a>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank"
+                        href="https://github.com/marccharton/oclock-memory_game">Dépot</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="#">Sujet</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" target="_blank" href="https://oclock.io">O'clock</a>
+                </li>
+            </ul>
+
+        </div>
+    </nav>
+
+
+    <section id="app">
+
+        <div id="board">
+            <a class="card card-back" id="fruit_1"> </a>
+            <a class="card card-back" id="fruit_2"> </a>
+            <a class="card card-back" id="fruit_3"> </a>
+            <a class="card card-back" id="fruit_4"> </a>
+            <a class="card card-back" id="fruit_5"> </a>
+            <a class="card card-back" id="fruit_6"> </a>
+            <a class="card card-back" id="fruit_7"> </a>
+            <a class="card card-back" id="fruit_8"> </a>
+            <a class="card card-back" id="fruit_9"> </a>
+            <a class="card card-back" id="fruit_10"> </a>
+            <a class="card card-back" id="fruit_1"> </a>
+            <a class="card card-back" id="fruit_2"> </a>
+            <a class="card card-back" id="fruit_3"> </a>
+            <a class="card card-back" id="fruit_4"> </a>
+            <a class="card card-back" id="fruit_5"> </a>
+            <a class="card card-back" id="fruit_6"> </a>
+            <a class="card card-back" id="fruit_7"> </a>
+            <a class="card card-back" id="fruit_8"> </a>
+            <a class="card card-back" id="fruit_9"> </a>
+            <a class="card card-back" id="fruit_10"> </a>
+        </div>
+
+        <div id="progress-bar-container">
+            <div class="progress">
+                <div id="progress-bar" class="progress-bar progress-bar-striped progress-bar-animated" role="progressbar"
+                    aria-valuenow="0" aria-valuemin="0" aria-valuemax="100" ></div>
+            </div>
+        </div>
+
+    </section>
+
+    <div id="score-list" class="modal" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Liste des scores</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Modal body text goes here.</p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-primary" id="play-button">Jouer</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
     <script src="bundle.js"></script>
 </body>
+
 </html>

@@ -13,7 +13,7 @@ class Validator
         }
 
         // vérification de l'existence des propriétés de manière dynamique
-        $propertyNameList = array("started_at", "finished_at", "score", "is_finished");
+        $propertyNameList = array("game_date", "game_duration", "score", "player_name");
         foreach ($propertyNameList as $propertyName) {
             $messageList = self::checkIfProperyExist($data, $propertyName, $messageList);
         }

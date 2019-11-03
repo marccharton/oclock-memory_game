@@ -1,4 +1,5 @@
 import { httpRequest } from "./config.js"
+import * as $ from "jquery";
 
 /**
  * Couche de connection à l'api du serveur
@@ -39,7 +40,7 @@ class ApiConnector {
     get(route) {
         this.settings.method = "GET";
         this.settings.url = `${this.apiBaseUrl}/${route}`;
-        this.send(this.settings);
+        return this.send(this.settings);
     }
 
     /**
@@ -59,10 +60,7 @@ class ApiConnector {
     * @param {Object} settings - paramètres de configuration spécifiques pour la requête
     */
     send(settings) {
-        $.ajax(settings).done(function (response) {
-            console.log(response);
-        });
+        return $.ajax(settings);
     }
 
-}
-export let apiConnector = new ApiConnector();
+} export let apiConnector = new ApiConnector();

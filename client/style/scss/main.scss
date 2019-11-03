@@ -1,0 +1,20 @@
+@import "bootstrap/scss/bootstrap";
+@import "theme/variables";
+@import "theme/bootswatch";
+@import "board";
+
+body {
+  background-color: $gray-300;
+}
+
+#app {
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+#progress-bar-container {
+  width: 70%;
+  margin: 0 auto;
+}

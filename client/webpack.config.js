@@ -1,5 +1,4 @@
-// const path = require('path');
-// const webpack = require('webpack');
+const path = require('path');
 
 module.exports = {
     entry: './js/app.js',
@@ -8,24 +7,37 @@ module.exports = {
         filename: 'bundle.js'
     },
     watch: true,
-    devtool: "source-map"
-    // plugins: [
-    //     new webpack.ProvidePlugin({
-    //         $: "jquery",
-    //         jQuery: "jquery",
-    //         "window.jQuery": "jquery"
-    //     })
-    // ],
-    // module: {
-    //     loaders: [
-    //         {
-    //             test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/,
-    //             loader: "imports?this=>window"
-    //         },
-    //         {
-    //             test: /[\/\\]node_modules[\/\\]some-module[\/\\]index\.js$/,
-    //             loader: "imports?define=>false"
-    //         }
-    //     ]
-    // }
+    devtool: "source-map",
+    module: {
+        rules: [
+            {
+                test: /\.scss$/i,
+                use: [
+                    'style-loader',
+                    {
+                        loader: 'css-loader',
+                        options: { importLoaders: 1 }
+                    },
+                    'resolve-url-loader',
+                    {
+                        loader: 'postcss-loader',
+                        options: {
+                            plugins: (loader) => [
+                                require('autoprefixer')({
+                                    browsers: ['last 2 versions', 'ie > 8']
+                                })
+                            ]
+                        }
+                    },
+                    'sass-loader',
+                ],
+            },
+            {
+                test: /\.png$/,
+                use: [{
+                    loader: 'file-loader'
+                }]
+            }
+        ],
+    },
 }

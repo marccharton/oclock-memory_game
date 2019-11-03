@@ -37,7 +37,7 @@ class ScoreRepository
     public function getScoreList()
     {
         // création de la requête
-        $statement = "SELECT * FROM {$this->table}";
+        $statement = "SELECT * FROM {$this->table} ORDER BY score DESC";
 
         // exécution de la requête
         $result = $this->db->query($statement);
@@ -54,10 +54,10 @@ class ScoreRepository
             // création d'un objet contenant toutes les propriétés de la ligne actuelle
             $scoreItem = array(
                 "id" => $id,
-                "started_at" => $started_at,
-                "finished_at" => $finished_at,
+                "game_date" => $game_date,
+                "game_duration" => $game_duration,
                 "score" => $score,
-                "is_finished" => $is_finished,
+                "player_name" => $player_name,
             );
 
             // on ajoute cet objet à la liste des objets à retourner
@@ -77,17 +77,17 @@ class ScoreRepository
         // création de la requête
         $statement = "
             INSERT INTO {$this->table}
-            SET started_at = :started_at,
-                finished_at = :finished_at,
+            SET game_date = :game_date,
+                game_duration = :game_duration,
                 score = :score,
-                is_finished = :is_finished
+                player_name = :player_name
         ";
 
         // préparation de la requête
         $request = $this->db->prepare($statement);
 
         // parcours des propriétés de manière dynamique
-        $propList = array("started_at", "finished_at", "score", "is_finished");
+        $propList = array("game_date", "game_duration", "score", "player_name");
         foreach($propList as $prop){
 
             // échappement des caractères spéciaux HTML

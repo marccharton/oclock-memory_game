@@ -1,0 +1,39 @@
+$card-img: url("../../assets/cards.png");
+
+@mixin cardImg($offset) {
+  background: $card-img 0px 0px - 100px * $offset;
+}
+
+@for $i from 1 through 10 {
+    #fruit_#{$i} {
+        @include cardImg($i - 1);
+    }
+}
+
+#board {
+  width: 600px;
+  height: 600px;
+
+  margin: 0 auto;
+
+  display: flex;
+  flex-wrap: wrap;
+
+  perspective: 800px;
+}
+
+.card {
+  width: 100px;
+  height: 100px;
+
+  margin: 10px;
+  box-shadow: 1px 1px 1px 1px lighten($color: $dark, $amount: 50);
+}
+
+.valid {
+  border: solid 2px $primary;
+}
+
+.card-back {
+  background: linear-gradient($orange, $red) !important;
+}
