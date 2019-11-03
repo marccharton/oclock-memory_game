@@ -49,10 +49,10 @@ if (!Validator::isDataValid($data)) {
  * @var Score
  */
 $score = new Score();
-$score->started_at = $data->started_at;
-$score->finished_at = $data->finished_at;
+$score->game_date = $data->game_date;
+$score->game_duration = $data->game_duration;
 $score->score = $data->score;
-$score->is_finished = $data->is_finished;
+$score->player_name = $data->player_name;
 
 /**
  * Indique si la création du post a été correctement créée.

@@ -79,7 +79,7 @@ function computeScore() {
 }
 
 function saveScore(score) {
-    scoreApi.create("2019-10-17", "2019-10-14", score, "1");
+    scoreApi.create("2019-10-17", timer.getTimeSpent(), score, playerName);
 }
 
 function revealCard() {

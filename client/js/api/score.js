@@ -16,18 +16,18 @@ const scoreApi = {
 
     /**
      * Créer un nouveau score dans la BDD
-     * @param {date} started_at - temps de début de la partie
-     * @param {date} finished_at - temps de fin de la partie
+     * @param {date} game_date - date de la partie
+     * @param {int} game_duration - durée de la partie
      * @param {int} score - score obtenu lors de la partie
-     * @param {bool} is_finished - est ce que la partie est allé jusqu'au bout
+     * @param {string} player_name - nom du joueur
      */
-    create(started_at, finished_at, score, is_finished) {
+    create(game_date, game_duration, score, player_name) {
         //return new Promise(function (resolve, reject) {
         const data = {
-            "started_at": started_at,
-            "finished_at": finished_at,
+            "game_date": game_date,
+            "game_duration": game_duration,
             "score": score,
-            "is_finished": is_finished
+            "player_name": player_name
         };
 
         const createScoreUrl = httpRoutes.score.create;

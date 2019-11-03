@@ -8,17 +8,17 @@ class Score
 	 */
 	public $id;
 
-	/**
-	 * début du jeu
-	 * @var date
-	 */
-    public $started_at;
-
     /**
-     * fin du jeu
+     * date de la partie
      * @var date
      */
-    public $finished_at;
+    public $game_date;
+
+    /**
+     * durée de la partie
+     * @var int
+     */
+    public $game_duration;
 
     /**
      * nombre de points obtenus
@@ -27,8 +27,8 @@ class Score
     public $score;
 
     /**
-     * le joueur a t-il fini le jeu ?
-     * @var bool
+     * nom du joueur
+     * @var string
      */
-    public $is_finished;
+    public $player_name;
 }
