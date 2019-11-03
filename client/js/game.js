@@ -1,3 +1,5 @@
+import { timer } from "./timer";
+
 let cardList;
 let cardVisible = false;
 let lockBoard = false;
@@ -6,13 +8,34 @@ let secondCard;
 let timeOutToFlip = 500;
 let totalCardNumber;
 let validatedCardNumber = 0;
+let scoreMax = 100000;
+let nbFail = 0;
 
-export function init() {
+export {
+    run,
+    endGame
+};
+
+function init() {
+    cardVisible = false;
+    lockBoard = false;
+    timeOutToFlip = 500;
+    validatedCardNumber = 0;
+    scoreMax = 100000;
+    nbFail = 0;
+}
+
+function run(isFirst = true) {
     cardList = document.querySelectorAll('.card');
     totalCardNumber = cardList.length;
     cardList.forEach(card => {
         card.addEventListener('click', revealCard);
         card.style.order = Math.floor(Math.random() * totalCardNumber);
+        if (!isFirst) {
+            card.classList.remove('card-front');
+            card.classList.add('card-back');
+            card.classList.remove('valid');
+        }
     });
 }
 
@@ -23,8 +46,34 @@ function resetConfiguration() {
     secondCard = null;
 }
 
-function endGame() {
-    alert("bravo ! :D");
+function restart() {
+    alert("je suis sûr que tu peux faire mieux ;)");
+    init();
+    run(false);
+    timer.init();
+    timer.run();
+}
+
+function endGame(isFinished) {
+    let score = computeScore();
+    saveScore(score);
+
+    if (isFinished) {
+        timer.stopTimer(true);
+        alert("bravo ! :D ton score est de : " + score);
+        restart();
+    }
+    else {
+        alert("ooowww, tu n'as pas fini à temps. ton score est de : " + score);
+        restart();
+    }
+}
+
+function computeScore(timeSpent) {
+    return Math.round(scoreMax / timer.getTimeSpent() + (validatedCardNumber * 2000) / totalCardNumber - nbFail * 500);
+}
+
+function saveScore(score) {
 }
 
 function revealCard() {
@@ -39,7 +88,7 @@ function revealCard() {
         return;
     }
     secondCard = this;
-    firstCard.id === secondCard.id ? validateCards() : showFront();
+    firstCard.id === secondCard.id ? validateCards() : hideCard();
 }
 
 function validateCards() {
@@ -51,12 +100,13 @@ function validateCards() {
     validatedCardNumber += 2;
 
     if (validatedCardNumber == totalCardNumber) {
-        setTimeout(() => endGame(), 200);
+        setTimeout(() => endGame(true), 200);
     }
     resetConfiguration();
 }
 
-function showFront() {
+function hideCard() {
+    nbFail++;
     lockBoard = true;
 
     setTimeout(() => {
