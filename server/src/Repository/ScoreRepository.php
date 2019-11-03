@@ -37,7 +37,7 @@ class ScoreRepository
     public function getScoreList()
     {
         // création de la requête
-        $statement = "SELECT * FROM {$this->table}";
+        $statement = "SELECT * FROM {$this->table} ORDER BY score DESC";
 
         // exécution de la requête
         $result = $this->db->query($statement);
