@@ -1,3 +1,4 @@
+
 # Marmelade
 
 (allez je vais quand même faire les readme en français :wink:)
@@ -37,3 +38,6 @@ De manière général, j'ai cherché un bon compromis entre pédagogie, adaptati
  - utilisation de php simple pour voir qu'un framework n'est pas obligatoire
  - une structure assez simple en couches pour comprendre l'intérêt d'organiser son code
 
+## aperçu
+
+<img height="500px" alt="Marmelade" src="oclock - marmelade.PNG" />
