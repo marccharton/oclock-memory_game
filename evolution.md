@@ -36,4 +36,9 @@
 - comme c'est chou les sprites sont de 100x100 <3
 - j'ai vraiment peur du front c'est ouf : je fais n'importe quoi alors que je sais très bien ce que je dois faire ^^
 - pwa lalaaaaa les stacks front c'est vraiment ... voilà.
--
+
+## après le front
+- pfiou bon ben ça va ça s'est bien passé au final.
+- bon c'est pas parfait, plein d'améliorations possibles mais je vais arrêter là.
+- j'aurais bien voulu ajouter des TU, une meilleure gestion des erreurs, une archi front plus propre, etc
+- je vais éviter de tout casser au dernier moment ^^

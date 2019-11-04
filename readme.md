@@ -38,6 +38,13 @@ De manière général, j'ai cherché un bon compromis entre pédagogie, adaptati
  - utilisation de php simple pour voir qu'un framework n'est pas obligatoire
  - une structure assez simple en couches pour comprendre l'intérêt d'organiser son code
 
+## évolution
+
+- un fichier [evolution.md](https://github.com/marccharton/oclock-memory_game/tree/master/evolution.md) est présent à la racine.
+- son objectif est de partager ce qui a pu se passer dans ma tête dans les grandes lignes autour de ce test technique
+- il peut autant servir à l'équipe d'o'clock pour le test que dans le cadre de l'utilisation de ce projet dans un but pédagogique.
+- je pense que partager le processus mental face à ce genre d'exercice peut réellement permettre aux apprenants de mieux se projeter.
+
 ## aperçu
 
 <img height="500px" alt="Marmelade" src="oclock - marmelade.PNG" />
