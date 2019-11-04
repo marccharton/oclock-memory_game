@@ -7,9 +7,9 @@ export {
 
 // paramètres globaux pour toutes les requêtes serveur
 const httpRequest = {
-    serverAddress: "http://oclock",
     port: "80",
-    serverPath: "/server/src/api"
+    serverAddress: "http://localhost",
+    serverPath: "/src/api"
 };
 
 // liste des routes utilisables
