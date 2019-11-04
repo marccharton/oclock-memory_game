@@ -26,7 +26,7 @@ lien vers le sujet : [Test technique - Full stack.pdf](Test&#32;technique&#32;-&
 
 ### choix techniques
 
-De manière général, j'ai cherché un bon compromis entre pédagogie, adaptation aux besoins et clareté.
+De manière générale, j'ai cherché un bon compromis entre pédagogie, adaptation aux besoins et clarté.
 
 #### client
  - coté front j'ai choisi d'utiliser des bonnes pratiques ES6
