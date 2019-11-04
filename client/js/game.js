@@ -1,5 +1,6 @@
 import { timer } from "./Timer";
 import { scoreApi } from "./api/score"
+import { openModal, bindModalButton } from "./utils/modal";
 
 export {
     run,
@@ -56,11 +57,13 @@ function run(isFirst = true) {
  * relance le jeu
  */
 function restart() {
-    alert("je suis sûr que tu peux faire mieux ;)");
-    init();
-    run(false);
-    timer.init();
-    timer.run();
+    openModal("je suis sûr que tu peux faire mieux ;)", "une dernière ?", "Je suis chaauuuuddd");
+    bindModalButton(() => {
+        init();
+        run(false);
+        timer.init();
+        timer.run();
+    });
 }
 
 /**
@@ -82,14 +85,16 @@ function endGame(isFinished) {
 
     if (isFinished) {
         timer.stopTimer(true);
-        alert("bravo ! :D \nton score est de : " + score);
+        openModal("ton score est de : " + score, "Bravo !");
     }
     else {
-        alert("ooowww, tu n'as pas fini à temps. ton score est de : " + score);
+        openModal("tu n'as pas fini à temps. ton score est de : " + score, "ooowww :'(");
     }
 
-    saveScore(score);
-    restart();
+    bindModalButton(() => {
+        saveScore(score);
+        restart();
+    });
 }
 
 /**
