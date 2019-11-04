@@ -12,7 +12,7 @@ class ApiConnector {
     constructor() {
 
         // url d'accès au serveur (voir la configuration)
-        this.apiBaseUrl = `${httpRequest.serverAddress}:${httpRequest.port}${httpRequest.serverPath}`;
+        this.apiBaseUrl = `${httpRequest.serverAddress}:${httpRequest.port}/${httpRequest.serverPath}`;
 
         // ensemble des routes accessibles du serveur
         this.url = {
