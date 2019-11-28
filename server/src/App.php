@@ -15,7 +15,7 @@ class App {
     const DB_USER = "root";
     const DB_PASS = "";
     const DB_HOST = "localhost";
-    const DB_PORT = "3308";
+    const DB_PORT = "3306";
 
     /**
      * Object d'accès et de manipulation de la base de données.
