@@ -19,7 +19,7 @@
         "autoprefixer": "^9.7.1",
         "css-loader": "^3.2.0",
         "minimist": ">=1.2.6",
-        "node-sass": "^4.13.1",
+        "node-sass": "^7.0.0",
         "postcss-loader": "^3.0.0",
         "resolve-url-loader": "^3.1.0",
         "sass-loader": "^8.0.0",
